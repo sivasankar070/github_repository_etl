@@ -9,7 +9,7 @@ GitHub API → Python → Pandas → PostgreSQL
 
 ## Technologies
 
-- Python
+ Python
 - Requests
 - Pandas
 - PostgreSQL

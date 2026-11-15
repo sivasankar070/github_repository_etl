@@ -1,0 +1,1 @@
+create or if not exists schema github;

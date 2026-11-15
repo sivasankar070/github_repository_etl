@@ -14,11 +14,11 @@ logger = logging.getLogger(__name__)
 load_dotenv(BASE_DIR / ".env")
 
 
-def get_connection():
+def get_connection(host_override=None):
     stage = "validating database configuration"
 
     try:
-        db_host = os.getenv("DB_HOST")
+        db_host = host_override or os.getenv("DB_HOST")
         db_name = os.getenv("DB_NAME")
         db_user = os.getenv("DB_USER")
         db_password = os.getenv("DB_PASSWORD")

@@ -1,0 +1,3 @@
+id,name,full_name,description,html_url,private,fork,created_at,updated_at,pushed_at,size,stargazers_count,forks_count,open_issues_count,language,visibility,archived,disabled,default_branch
+42807094,Open-Stereotype,Open-AI/Open-Stereotype,"The way to store information is inheritance, like stereotypes.",https://github.com/Open-AI/Open-Stereotype,False,False,2015-09-20 09:10:33+00:00,2023-01-24 17:04:08+00:00,2015-09-20 09:10:33+00:00,128,3,1,0,Unknown,public,False,False,master
+42809103,Open-AI,Open-AI/Open-AI,"Main project, standard definition",https://github.com/Open-AI/Open-AI,False,False,2015-09-20 10:34:02+00:00,2017-08-30 22:42:27+00:00,2016-04-19 15:20:43+00:00,11,10,2,0,Unknown,public,False,False,master

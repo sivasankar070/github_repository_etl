@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 load_dotenv(BASE_DIR / ".env")
 
 
-def extract_repositories(owner, account_type="user"):
+def extract_repositories(owner, account_type, output_file=None):
     logger.info(
         "Extraction started | owner=%s | account_type=%s",
         owner,
@@ -35,7 +35,9 @@ def extract_repositories(owner, account_type="user"):
 
         # 2. Prepare output directory
         stage = "preparing output directory"
-        RAW_FILE.parent.mkdir(parents=True, exist_ok=True)
+        output_file = Path(output_file) if output_file else RAW_FILE
+
+        output_file.parent.mkdir(parents=True, exist_ok=True)
 
         repos = []
         page = 1
@@ -94,20 +96,15 @@ def extract_repositories(owner, account_type="user"):
 
         # 5. Save raw API response
         stage = "writing raw JSON"
-        with RAW_FILE.open("w", encoding="utf-8") as file:
-            json.dump(
-                repos,
-                file,
-                indent=4,
-                ensure_ascii=False
-            )
+        with output_file.open("w", encoding="utf-8") as f:
+            json.dump(repos, f, indent=4, ensure_ascii=False)
 
         logger.info(
             "Extraction completed | owner=%s | total_repositories=%s "
             "| output=%s",
             owner,
             len(repos),
-            RAW_FILE
+            output_file
         )
 
         return repos

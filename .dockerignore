@@ -1,0 +1,24 @@
+# Python environments
+venv/
+.venv/
+
+# Python cache and test cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local data and logs
+data/
+logs/
+*.log
+
+# Git
+.git/
+
+# Secrets and local configuration
+.env
+airflow_settings.yaml
+
+# Airflow local files
+airflow.db
+airflow.cfg
